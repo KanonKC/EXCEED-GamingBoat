@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+#project-title{
+  font-size: 40px;
+  margin: 0;
+  color: white;
+  letter-spacing: 10px;
+}
+
+#navbar{
+  background-color: #293241;
+}
