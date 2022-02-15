@@ -1,3 +1,7 @@
+body{
+  background-color: #EDF2FB;
+}
+
 .App {
   text-align: center;
 }
@@ -46,4 +50,29 @@
 
 #navbar{
   background-color: #293241;
+}
+
+.node-circle{
+  width: 180px;
+  height: 180px;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 12px solid #3D5A80;
+}
+
+.node-circle-inside{
+  width: 130px;
+  height: 130px;
+  background-color: #98C1D9;
+  border-radius: 100px;
+  margin-left: 13px;
+  margin-top: 13px;
+}
+
+.edge{
+  height: 25px;
+  width: 140px;
+  background-color: white;
+  border: 8px solid #3D5A80;
+  margin-top: 75px;
 }
