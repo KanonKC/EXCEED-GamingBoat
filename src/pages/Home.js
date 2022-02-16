@@ -8,12 +8,6 @@ const Home = () => {
         <h1>Home</h1>
         <div className='flex'>
             <Node/>
-            {/* <Edge/>
-            <Node/>
-            <Edge/>
-            <Node/>
-            <Edge/>
-            <Node/> */}
         </div>
         
     </div>
