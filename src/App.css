@@ -47,3 +47,39 @@
 #navbar{
   background-color: #293241;
 }
+
+body {
+  background-color: #EDF2FB;
+}
+
+.card {
+  background-color: white;
+  width: 800px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.day-box {
+  background-color: yellow;
+  width: 100px;
+  height: 70px;
+}
+
+.day {
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  /* background-color: yellow; */
+  width: 100px;
+  height: 70px;
+}
+
+.dayName {
+  margin: auto;
+}
+
+.time {
+  margin: auto;
+}
