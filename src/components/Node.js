@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Node = () => {
+const Node = (props) => {
   return (
     <div className='node-circle'>
-        <div className='node-circle-inside'></div>
+        {props.isChecked>0 && <div className='node-circle-inside mx-auto'></div>}
     </div>
   )
 }
