@@ -8,12 +8,12 @@ const Home = () => {
         <h1>Home</h1>
         <div className='flex'>
             <Node/>
-            <Edge/>
+            {/* <Edge/>
             <Node/>
             <Edge/>
             <Node/>
             <Edge/>
-            <Node/>
+            <Node/> */}
         </div>
         
     </div>
