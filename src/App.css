@@ -72,31 +72,35 @@ body {
   width: 800px;
   height: 70px;
   display: flex;
-  justify-content: center;
-  margin: auto;
+  margin-top: 40px;
 }
 
 .day-box {
-  background-color: yellow;
+  background-color: #FFDF37;
   width: 100px;
   height: 70px;
+  
 }
 
 .day {
   color: white;
   font-weight: 700;
   font-size: 40px;
-  /* background-color: yellow; */
   width: 100px;
   height: 70px;
 }
 
 .dayName {
-  margin: auto;
+  align-self: center;
+  font-weight: 500;
+  font-size: 30px;
+  padding: 30px;
 }
 
 .time {
-  margin: auto;
+  align-self: center;
+  font-weight: 500;
+  font-size: 40px;
 }
 
 .node-circle{
