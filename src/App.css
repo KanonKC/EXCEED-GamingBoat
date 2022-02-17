@@ -174,3 +174,15 @@ body {
   font-size: 48px;
   text-align: center;
 }
+
+.clock{
+  font-size: 120px;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+.time-border{
+  /* border: 5px solid #3D5A80; */
+  /* border-radius: 15px; */
+  /* background-color: white; */
+}

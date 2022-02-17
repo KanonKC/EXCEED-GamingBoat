@@ -1,8 +1,13 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Clock from '../components/Clock'
 import Edge from '../components/Edge'
+import EstimateTime from '../components/EstimateTime'
 import Node from '../components/Node'
 import { getBoatData } from '../services/boat'
+
+function setZero(num){
+  return num < 0 ? 0 : num
+}
 
 const Home = () => {
   const [Current,setCurrent] = useState(0)
@@ -18,7 +23,7 @@ const Home = () => {
   useEffect(()=>{
     const timer = setInterval(() => {
       getBoatData().then((data)=>{
-        setCurrent(data.passed)
+        setCurrent(setZero(data.passed))
         if(data.where == 0 && data.passed == -1){
           setBoatStatus(0)
         }
@@ -37,7 +42,9 @@ const Home = () => {
   return (
     <div>
         {/* <p>Where {BoatStatus} BoatStatus {Current}</p> */}
+
         <p className='status mt-10 mb-20'>STATUS: <span style={{"color": Status[BoatStatus].color}}>{Status[BoatStatus].label}</span></p>
+
         <div className=''>
           <div className='flex path-graph'>
               <Edge bColor="white" w="1000"/>
@@ -48,6 +55,10 @@ const Home = () => {
               <Node mr='0' isChecked={Math.floor(Current/3)} label="DESTINATION"/>
           </div>
         </div>
+
+        {/* <Clock isEnable={BoatStatus}/> */}
+        <Clock isEnable={true}/>
+        <EstimateTime/>
         
     </div>
   )
