@@ -108,6 +108,11 @@ body {
   /* margin-right: 134px; */
 }
 
+/* .node-circle:hover{
+  width: 200px;
+  height: 200px;
+} */
+
 .node-circle-inside{
   width: 130px;
   height: 130px;
@@ -115,6 +120,19 @@ body {
   border-radius: 100px;
   margin-top: 12px;
   z-index: 1;
+  transition: all 0.2s;
+}
+
+.node-circle-inside:hover{
+  width: 140px;
+  height: 140px;
+  margin-top: 8px;
+}
+
+.node-label{
+  text-align: center;
+  font-size: 24px;
+  margin-top: 10px;
 }
 
 .edge{
@@ -155,8 +173,4 @@ body {
 .status{
   font-size: 48px;
   text-align: center;
-}
-
-.status-label{
-  color: red;
 }

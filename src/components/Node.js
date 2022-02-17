@@ -2,10 +2,13 @@ import React from 'react'
 
 const Node = (props) => {
   return (
-    <div className='node-circle' style={{
+    <div style={{
       "marginRight":`${props.mr}px`
     }}>
-        {props.isChecked>0 && <div className='node-circle-inside mx-auto'></div>}
+      <div className='node-circle'>
+          {props.isChecked>0 && <div className='node-circle-inside mx-auto'></div>}
+      </div>
+      <p className='node-label'>{props.label}</p>
     </div>
   )
 }
