@@ -190,3 +190,23 @@ body {
   /* border-radius: 15px; */
   /* background-color: white; */
 }
+
+.estimate-time{
+  width: 220px;
+  text-align: center;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: ;
+}
+
+.est-time{
+  font-size: 48px;
+  letter-spacing: 7px;
+}
+
+.est-text{
+  color: white;
+  font-size: 28px;
+  background-color: #293241;
+  border-radius: 0 0 15px 15px;
+}
