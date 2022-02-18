@@ -212,3 +212,11 @@ body {
   background-color: #293241;
   border-radius: 0 0 15px 15px;
 }
+
+.btn-cancel {
+  border: 5px solid black;
+}
+
+.btn-save {
+  border: 5px solid black;
+}

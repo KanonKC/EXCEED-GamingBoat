@@ -17,6 +17,7 @@ const Navbar = (props) => {
         {/* <Link to="/schedule" className='nav-btn col-start-10'>Home</Link> */}
         <p className='nav-btn col-start-10'>Home</p>
         <p className='nav-btn col-start-11'>Schedule</p>
+        <p className='nav-btn col-start-12'>AddTime</p>
     </div>
   )
 }
