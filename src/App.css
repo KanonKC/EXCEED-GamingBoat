@@ -214,16 +214,22 @@ body {
 }
 
 .btn-add {
-  padding: 30px;
+  font-size: 20px;
+  padding: auto;
+  width: 170px;
+  height: 100px;
   color: white;
+  border-radius: 10px;
 }
 
 .add-cancel {
   background-color: #EE6C4D;
+  float: left;
 }
 
 .add-save {
   background-color: #3D5A80;
+  float: right;
 }
 
 .popup {
@@ -237,11 +243,18 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.add-label {
+  font-size: 30px;
+  padding-right: 30px;
+}
+
 .add-day {
+  font-size: 35px;
   border-bottom: 1px solid black;
 }
 
 .add-time {
+  font-size: 35px;
   border: 3px solid rgb(224, 224, 224);
 }
 
@@ -264,4 +277,13 @@ body {
   letter-spacing: 5px;
   text-shadow: 0px 0px 0px white;
   transition: text-shadow 0.3s;
+}
+
+.form-date {
+  height: 200px;
+  text-align: center;
+}
+
+.time-list {
+  padding-top: 40px;
 }
