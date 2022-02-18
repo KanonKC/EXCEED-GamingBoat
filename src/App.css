@@ -213,10 +213,34 @@ body {
   border-radius: 0 0 15px 15px;
 }
 
-.btn-cancel {
-  border: 5px solid black;
+.btn-add {
+  padding: 30px;
 }
 
-.btn-save {
-  border: 5px solid black;
+.add-cancel {
+  background-color: #EE6C4D;
+}
+
+.add-save {
+  background-color: #3D5A80;
+}
+
+.popup {
+  background-color: white;
+  width: 60%;
+  height: 70%;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.add-day {
+  border-bottom: 1px solid black;
+}
+
+.add-time {
+  border-bottom: 1px solid black;
 }

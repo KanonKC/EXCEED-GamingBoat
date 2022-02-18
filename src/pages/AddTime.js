@@ -2,10 +2,10 @@ import React from 'react'
 
 const AddTime = () => {
   return (
-    <div>
+    <div className='popup'>
         <form>
             <label>Day : </label>
-            <select id='day'>
+            <select className='add-day'>
                 <option value={'Sunday'}>Sunday</option>
                 <option value={'Monday'}>Monday</option>
                 <option value={'Tuesday'}>Tuesday</option>
@@ -14,9 +14,13 @@ const AddTime = () => {
                 <option value={'Friday'}>Friday</option>
                 <option value={'Saturday'}>Saturday</option>
             </select>
+
+            <label>Time : </label>
+            <input className='add-time' type={"time"}></input>
+            
+            <button className='btn-add add-cancel'>Cancel</button>
+            <button className='btn-add add-save'>Save</button>
         </form>
-        <button className='btn-cancel'>Cancel</button>
-        <button className='btn-save'>Save</button>
     </div>
     
   )
