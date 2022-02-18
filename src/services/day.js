@@ -9,7 +9,7 @@ const Day = {
     },
     'tue': {
       name: 'Tuesday',
-      color: '#ff00d9'
+      color: '#FFA1D4'
     },
     'wed': {
       name: 'Wednesday',
