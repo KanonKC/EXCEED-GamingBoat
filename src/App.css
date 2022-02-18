@@ -215,6 +215,7 @@ body {
 
 .btn-add {
   padding: 30px;
+  color: white;
 }
 
 .add-cancel {
@@ -234,7 +235,6 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px;
 }
 
 .add-day {
@@ -242,5 +242,26 @@ body {
 }
 
 .add-time {
-  border-bottom: 1px solid black;
+  border: 3px solid rgb(224, 224, 224);
+}
+
+.add-time:focus {
+  border: 3px solid #555;
+}
+
+.add-form {
+  padding: 7%;
+}
+
+#navbar-addtime{
+  background-color: #293241;
+}
+
+#addtime-title{
+  font-size: 40px;
+  margin: 0;
+  color: white;
+  letter-spacing: 5px;
+  text-shadow: 0px 0px 0px white;
+  transition: text-shadow 0.3s;
 }
