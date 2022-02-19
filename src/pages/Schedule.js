@@ -16,9 +16,9 @@ const Schedule = () => {
   })
 
   return (
-    <div className='my-10'>
+    <div className='card-list my-10 mx-auto'>
       {schedule.map((sch)=>(
-        <Card color={Day[sch.day_name].color} day={Day[sch.day_name].name} time={formatTime(sch.time)}/>
+        <Card color={Day[sch.day_name].color} day={Day[sch.day_name].name.toUpperCase()} time={formatTime(sch.time)}/>
       ))}
     </div>
     
