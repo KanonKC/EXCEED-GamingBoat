@@ -1,7 +1,7 @@
 const Day = {
     'sun': {
       name: 'Sunday',
-      color: '#F60000'
+      color: '#f52727'
     },
     'mon': {
       name: 'Monday',
@@ -25,7 +25,7 @@ const Day = {
     },
     'sat': {
       name: 'Saturday',
-      color: '#A803E2'
+      color: '#bf2cf2'
     }
   }
 
