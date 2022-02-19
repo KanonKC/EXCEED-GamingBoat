@@ -12,7 +12,6 @@ const EstimateTime = () => {
         const intEst = Math.floor(data.estimate_time)
         const minute = Math.floor(intEst/60)
         const second = intEst%60
-  
         setEstTime(`${convertTo2Digit(minute)}:${convertTo2Digit(second)}`)
       })
     },1000)

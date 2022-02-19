@@ -6,7 +6,7 @@ const Card = (props) => {
         <div className='day-box col-start-1 col-end-2' style={{
           "backgroundColor" : props.color
         }}>
-            <p className='day mt-2'>{props.day[0]}</p>
+            <p className='day mt-1'>{props.day[0]}</p>
         </div>
         <p className='dayName col-start-3 col-end-6'>{props.day}</p>
         <p className='time'>{props.time}</p>
