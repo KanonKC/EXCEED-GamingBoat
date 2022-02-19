@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import AddCard from '../components/AddCard'
 import Card from '../components/Card'
-import { Day } from '../services/day'
 import { getSchedule } from '../services/schedule'
-import { formatTime } from '../services/timeformatter'
 
 const Schedule = () => {
 
@@ -18,8 +17,9 @@ const Schedule = () => {
   return (
     <div className='card-list my-10 mx-auto'>
       {schedule.map((sch)=>(
-        <Card color={Day[sch.day_name].color} day={Day[sch.day_name].name.toUpperCase()} time={formatTime(sch.time)}/>
+        <Card day={sch.day_name} time={sch.time}/>
       ))}
+      <AddCard/>
     </div>
     
   )
