@@ -1,31 +1,31 @@
 const Day = {
     'sun': {
       name: 'Sunday',
-      color: '#ff0000'
+      color: '#F60000'
     },
     'mon': {
       name: 'Monday',
-      color: '#ffdd00'
+      color: '#FFDF37'
     },
     'tue': {
       name: 'Tuesday',
-      color: '#ff00d9'
+      color: '#FD8BC9'
     },
     'wed': {
       name: 'Wednesday',
-      color: '#29f500'
+      color: '#45EF1B'
     },
     'thu': {
       name: 'Thursday',
-      color: '#ff8800'
+      color: '#FFA136'
     },
     'fri': {
       name: 'Friday',
-      color: '#00f7ff'
+      color: '#03E1E9'
     },
     'sat': {
       name: 'Saturday',
-      color: '#9000ff'
+      color: '#A803E2'
     }
   }
 
