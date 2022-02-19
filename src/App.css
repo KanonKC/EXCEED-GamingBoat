@@ -258,12 +258,13 @@ body {
 .add-sch-icon{
   color: #2C4463;
   align-self: center;
+}
 
 .btn-add {
-  font-size: 20px;
+  font-size: 36px;
   padding: auto;
-  width: 170px;
-  height: 100px;
+  width: 220px;
+  height: 70px;
   color: white;
   border-radius: 10px;
 }
@@ -287,6 +288,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .add-label {
@@ -309,7 +311,7 @@ body {
 }
 
 .add-form {
-  padding: 7%;
+  padding: 0 7% 7% 7%;
 }
 
 #navbar-addtime{
@@ -332,4 +334,12 @@ body {
 
 .time-list {
   padding-top: 40px;
+}
+
+#invalid-card-input{
+  color: #ff0800;
+  font-size: 26px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }

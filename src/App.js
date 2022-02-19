@@ -5,7 +5,7 @@ import Card from './components/Card';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Schedule from './pages/Schedule';
-import AddTime from './pages/AddTime';
+import AddTime from './components/AddTime';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/schedule" element={<Schedule/>}/>
-          <Route path="/addtime" element={<AddTime/>}/>
+          {/* <Route path="/addtime" element={<AddTime/>}/> */}
         </Routes>
     </div>
   );

@@ -1,15 +1,16 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
+import { addButton, showAddTime } from '../services/button'
 
 const AddCard = () => {
 
-    function add(){
-        alert("Added!")
-    } 
+  function addTime(){
+    addButton()
+  }
 
   return (
-    <div onClick={add} className='add-card'>
+    <div className='add-card' onClick={addTime}>
         <FontAwesomeIcon className='add-sch-icon mx-auto' size='3x' icon={faPlus}/>
     </div>
   )

@@ -8,6 +8,11 @@ function formatTime(second){
     return `${convertTo2Digit(hour)}:${convertTo2Digit(minute)}`
 }
 
+function unitTime(time){
+    const result = time.split(':')
+    return Number(result[0])*60 + Number(result[1])
+}
+
 module.exports = {
-    convertTo2Digit,formatTime
+    convertTo2Digit,formatTime,unitTime
 }

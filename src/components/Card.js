@@ -1,15 +1,22 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Button from '@mui/material/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
-import { formatTime } from '../services/timeformatter'
+import { formatTime, unitTime } from '../services/timeformatter'
 import { Day } from '../services/day'
+import { deleteSchedule } from '../services/schedule'
+import { editButton, editCardData, showAddTime } from '../services/button'
 
 const Card = (props) => {
 
-  function deleteSchedule(){
-    console.log(props.day)
-    console.log(props.time)
+  const formRef = useRef()
+
+  function editCard(){
+    editButton(props.day,formatTime(props.time))
+  }
+
+  function deleteCard(){
+    deleteSchedule(props.day,Number(props.time))
   }
 
   return (
@@ -20,9 +27,9 @@ const Card = (props) => {
             <p className='day mt-1 drop-shadow-md'>{props.day[0].toUpperCase()}</p>
         </div>
         <p className='dayName'>{Day[props.day].name}</p>
-        <p className='time'>{props.time}</p>
-        <Button className='card-btn-edit' size='' disableElevation variant="contained" startIcon={<FontAwesomeIcon icon={faPen}/>}>EDIT</Button>
-        <Button onClick={deleteSchedule} className='card-btn-delete' size='' disableElevation color="error" variant="contained" startIcon={<FontAwesomeIcon icon={faTrash}/>}>DELETE</Button>
+        <p className='time'>{formatTime(props.time)}</p>
+        <Button onClick={editCard} className='card-btn-edit' size='' disableElevation variant="contained" startIcon={<FontAwesomeIcon icon={faPen}/>}>EDIT</Button>
+        <Button onClick={deleteCard} className='card-btn-delete' size='' disableElevation color="error" variant="contained" startIcon={<FontAwesomeIcon icon={faTrash}/>}>DELETE</Button>
       </div>    
   )
 }
