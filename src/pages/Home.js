@@ -3,7 +3,7 @@ import Clock from '../components/Clock'
 import Edge from '../components/Edge'
 import EstimateTime from '../components/EstimateTime'
 import Node from '../components/Node'
-import { getBoatData } from '../services/boat'
+import { getBoatData, initCounter, SAILING } from '../services/boat'
 
 function setZero(num){
   return num < 0 ? 0 : num
@@ -12,7 +12,7 @@ function setZero(num){
 const Home = () => {
   const [Current,setCurrent] = useState(0)
   const [BoatStatus,setBoatStatus] = useState(0)
-
+  const [isStarted,setIsStarted] = useState(false)
   const Meter = [0,450,750,1000]
   const Status = [
     {label: "Offline",color: "red"},
@@ -24,7 +24,14 @@ const Home = () => {
     const timer = setInterval(() => {
       getBoatData().then((data)=>{
         setCurrent(setZero(data.passed))
-        if(data.where == 0 && data.passed == -1){
+        if(!SAILING){
+          SAILING = true
+          initCounter()
+        }
+        else if(SAILING && data.where == -1){
+          SAILING = false
+        }
+        if(data.where == -1){
           setBoatStatus(0)
         }
         else if(data.where == 1){
@@ -39,6 +46,8 @@ const Home = () => {
     return () => clearInterval(timer)
   })
 
+  console.log(BoatStatus)
+
   return (
     <div>
         {/* <p>Where {BoatStatus} BoatStatus {Current}</p> */}
@@ -48,16 +57,17 @@ const Home = () => {
         <div className=''>
           <div className='flex path-graph'>
               <Edge bColor="white" w="1000"/>
-              <Edge bColor="#3D5A80" w={Meter[Current]}/>
-              <Node mr='134' isChecked={true} label="START"/>
-              <Node mr='134' isChecked={Math.floor(Current/1)} label="CHECKPOINT 1"/>
-              <Node mr='134' isChecked={Math.floor(Current/2)} label="CHECKPOINT 2"/>
-              <Node mr='0' isChecked={Math.floor(Current/3)} label="DESTINATION"/>
+              <Edge bColor="#3D5A80" w={BoatStatus == 0 ? 0 : Meter[Current]}/>
+              <Node mr='134' isChecked={true
+              } label="START"/>
+              <Node mr='134' isChecked={BoatStatus!=0 && Math.floor(Current/1)} label="CHECKPOINT 1"/>
+              <Node mr='134' isChecked={BoatStatus!=0 && Math.floor(Current/2)} label="CHECKPOINT 2"/>
+              <Node mr='0' isChecked={BoatStatus!=0 && Math.floor(Current/3)} label="DESTINATION"/>
           </div>
         </div>
 
-        {/* <Clock isEnable={BoatStatus}/> */}
-        <Clock isEnable={true}/>
+        <Clock isEnable={BoatStatus!=0}/>
+        {/* <Clock isEnable={true}/> */}
         <EstimateTime/>
         
     </div>

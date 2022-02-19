@@ -1,9 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import { getBoatData, SAILING } from '../services/boat'
 
 const Clock = (props) => {
 
     const [second,setSecond] = useState(0)
     const [minute,setMinute] = useState(0)
+    const [hold,setHold] = useState(false)
+
+    useState(()=>{
+        if(SAILING){
+            getBoatData().then((data)=>{
+                    setHold(true)
+                    const diffTime = Math.floor((Date.now()-data.start_time)/1000)
+                    setMinute(Math.floor(diffTime/60))
+                    setSecond(diffTime%60)                
+            })
+        }
+    })
+
 
     useEffect(()=>{
         const timer = setInterval(()=>{
@@ -17,6 +31,8 @@ const Clock = (props) => {
         else{
             setSecond(0)
             setMinute(0)
+            console.log("Hello?")
+            // setHold(false)
         }
         },1000)
         return () => clearInterval(timer)

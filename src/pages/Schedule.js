@@ -13,7 +13,6 @@ const Schedule = () => {
   useEffect(()=>{
     getSchedule().then((data)=>{
       setSchedule(data.schedules)
-
     })
   })
 
