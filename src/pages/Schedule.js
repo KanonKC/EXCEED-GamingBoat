@@ -19,10 +19,12 @@ const Schedule = () => {
   return (
     <div className='card-list my-10 mx-auto'>
       <AddTime/>
+      <div id='sub-card-list'>
       {schedule.map((sch)=>(
         <Card day={sch.day_name} time={sch.time}/>
       ))}
       <AddCard/>
+      </div>
     </div>
     
   )
