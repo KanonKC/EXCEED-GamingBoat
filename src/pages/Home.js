@@ -3,7 +3,7 @@ import Clock from '../components/Clock'
 import Edge from '../components/Edge'
 import EstimateTime from '../components/EstimateTime'
 import Node from '../components/Node'
-import { getBoatData, initCounter, SAILING } from '../services/boat'
+import { getBoatData, initCounter, postDiff, SAILING, setSail } from '../services/boat'
 
 function setZero(num){
   return num < 0 ? 0 : num
@@ -24,12 +24,20 @@ const Home = () => {
     const timer = setInterval(() => {
       getBoatData().then((data)=>{
         setCurrent(setZero(data.passed))
-        if(!SAILING){
-          SAILING = true
+        // if(0){
+        //   initCounter()
+        // }
+        // else if(0 && data.where == -1){
+        // }
+        if(data.where == 0 && data.is_sailing){
           initCounter()
+          console.log("Init")
+          setSail(false)
         }
-        else if(SAILING && data.where == -1){
-          SAILING = false
+        if(data.where == -1 && !data.is_sailing){
+            postDiff()
+            console.log("PostDiff")
+            setSail(true)
         }
         if(data.where == -1){
           setBoatStatus(0)

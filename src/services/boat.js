@@ -19,3 +19,9 @@ export async function postDiff(){
         postEstimateTime(Math.floor((Date.now() - response.data.start_time)/1000))
     })
 }
+
+export async function setSail(bool){
+    axios.post('https://ecourse.cpe.ku.ac.th/exceed08/api/update-status',{
+        "is_sailing": bool
+    })
+}

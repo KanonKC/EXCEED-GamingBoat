@@ -5,23 +5,32 @@ const Clock = (props) => {
 
     const [second,setSecond] = useState(0)
     const [minute,setMinute] = useState(0)
-    const [hold,setHold] = useState(false)
+    const [isSail,setIsSail] = useState(true)
 
     useState(()=>{
-        if(SAILING){
-            getBoatData().then((data)=>{
-                    setHold(true)
-                    const diffTime = Math.floor((Date.now()-data.start_time)/1000)
-                    setMinute(Math.floor(diffTime/60))
-                    setSecond(diffTime%60)                
-            })
-        }
+        // if(SAILING){
+        //     getBoatData().then((data)=>{
+        //             setHold(true)
+        //             const diffTime = Math.floor((Date.now()-data.start_time)/1000)
+        //             setMinute(Math.floor(diffTime/60))
+        //             setSecond(diffTime%60)                
+        //     })
+        // }
+        getBoatData().then((data)=>{
+            const diffTime = Math.floor((Date.now()-data.start_time)/1000)
+            setMinute(Math.floor(diffTime/60))
+            setSecond(diffTime%60)
+            setIsSail(data.is_sailing)
+        })
     })
 
 
     useEffect(()=>{
         const timer = setInterval(()=>{
-        if(props.isEnable){
+        getBoatData().then((data)=>{
+            setIsSail(data.is_sailing)
+        })
+        if(!isSail){
             setSecond(second+1)
             if(second == 59){
             setSecond(0)
